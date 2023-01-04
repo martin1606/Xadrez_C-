@@ -1,5 +1,5 @@
 ﻿
-namespace _12ChessGameConsole.Tabuleiro
+namespace tabuleiro
 {
     class Posicao
     {

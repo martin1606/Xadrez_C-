@@ -1,4 +1,4 @@
-﻿using _12ChessGameConsole.Tabuleiro;
+﻿using tabuleiro;
 using System;
 
 namespace _12ChessGameConsole
@@ -7,11 +7,7 @@ namespace _12ChessGameConsole
 	{
 		static void Main(string[] args)
 		{
-			Posicao P;
-
-			P = new Posicao(3,4);
-
-			Console.WriteLine($"Posição: {P}");
+			Tabuleiro tab = new Tabuleiro(8,8);
 			Console.ReadLine();
 		}
 	}
