@@ -10,11 +10,28 @@ namespace _12ChessGameConsole
 		{
 			try
 			{
-				Tabuleiro tab = new Tabuleiro(8, 8);
-				tab.colocarPeca(new Rei(tab, Cor.Preto), new Posicao(1, 2));
-                tab.colocarPeca(new Rei(tab, Cor.Branco), new Posicao(3, 2));
-                Tela.imprimirTabuleiro(tab);
-                Console.ReadLine();
+				PartidaDeXadrez partida = new PartidaDeXadrez();
+
+				while (!partida.terminada)
+				{
+					Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab);
+					Console.WriteLine();
+					Console.Write("Origem: ");
+					Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+					
+					bool[,] posicaoPossivel = partida.tab.peca(origem).movimentosPossiveis();
+
+					Console.Clear();
+					Tela.imprimirTabuleiro(partida.tab, posicaoPossivel);
+
+					Console.WriteLine();
+                    Console.Write("Destino: ");
+                    Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
+
+					partida.executaMovimento(origem, destino);
+                }
+                
 			}
 			catch (TabuleiroException e)
 			{
