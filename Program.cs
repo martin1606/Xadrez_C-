@@ -47,6 +47,7 @@ namespace _12ChessGameConsole
                         Console.WriteLine($"Ação inválida. {e.Message}");
                         Console.Write("Tente novamente...");
                         Console.ReadLine();
+                    
                     }
                 }
 

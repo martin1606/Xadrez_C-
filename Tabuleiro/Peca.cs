@@ -7,6 +7,7 @@ namespace tabuleiro
         public Cor cor { get; protected set; }
         public int qteMovimentos { get; protected set; }
         public Tabuleiro tab { get; protected set; }
+        public bool passant { get; set; }
 
         public Peca(Tabuleiro tab, Cor cor)
         {
@@ -14,6 +15,7 @@ namespace tabuleiro
             this.cor = cor;
             this.tab = tab;
             this.qteMovimentos = 0;
+            this.passant = false;
         }
         public bool existeMovimentosPossiveis()
         {
@@ -31,7 +33,7 @@ namespace tabuleiro
             return false;
         }
 
-        public bool podeMoverPara(Posicao pos)
+        public bool movimentoPossivel(Posicao pos)
         {
             return movimentosPossiveis()[pos.linha,pos.coluna];
         }

@@ -17,10 +17,10 @@ namespace _12ChessGameConsole
             Console.WriteLine();
             Console.WriteLine($"Turno: {partida.turno}");
             Console.WriteLine($"Aguardando jogador: {partida.jogadorAtual}");
-            //if (partida.xeque)
-            //{
-            //    Console.WriteLine("XEQUE!");
-            //}
+            if (partida.xeque)
+            {
+                Console.WriteLine($"jogador {partida.jogadorAtual} em XEQUE!");
+            }
         }
 
         public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
