@@ -11,6 +11,10 @@ namespace _12ChessGameConsole
             try
             {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
+                Console.WriteLine("--- JOGO DE XADREZ ---");
+                Console.WriteLine("Bem-vindo!");
+                Console.WriteLine("Enter para começar...");
+                Console.ReadLine();
 
                 while (!partida.terminada)
                 {
